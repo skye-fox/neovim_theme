@@ -1,5 +1,9 @@
 local M = {}
 
+function M.setup(opts)
+	opts = opts or {}
+end
+
 local colors = {
 	text0 = "#cdd6f4",
 	text1 = "#8294C9",
