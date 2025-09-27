@@ -31,7 +31,7 @@ function M.colorscheme()
 	vim.cmd("syntax reset")
 
 	vim.o.background = "dark"
-	vim.g.colors_name = "my-theme"
+	vim.g.colors_name = "neovim_theme"
 
 	local set = vim.api.nvim_set_hl
 
