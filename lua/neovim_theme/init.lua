@@ -123,5 +123,8 @@ function M.colorscheme()
 	set(0, "@variable.parameter", { fg = colors.teal })
 	set(0, "@variable.builtin", { link = "@function.builtin" }) -- built-in variable names (e.g. `this`, `self`)
 	set(0, "@variable.parameter.builtin", { link = "@variable.parameter" }) -- special parameters (e.g. `_`, `it`)
+
+	-- Treesitter C
+	set(0, "@type.builtin.c", { fg = colors.yellow })
 end
 return M
