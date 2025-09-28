@@ -101,12 +101,15 @@ function M.colorscheme()
 
 	-- Semantic Tokens
 	set(0, "@function.builtin", { fg = colors.orange })
-	set(0, "@lsp.mod.declaration.zig", { fg = colors.lavender })
 	set(0, "@lsp.type.enumMember", { fg = colors.red })
 	set(0, "@lsp.type.variable", {})
 	set(0, "@lsp.typemod.function.defaultLibrary", { link = "@function.builtin" })
 	set(0, "@lsp.typemod.function.builtin", { link = "@function.builtin" })
+
+	-- Semantic Token Zig
+	set(0, "@lsp.mod.declaration.zig", { fg = colors.lavender })
 	set(0, "@lsp.typemod.function.declaration.zig", { link = "Function" })
+	set(0, "@lsp.typemod.parameter.declaration.zig", { link = "@variable.parameter" })
 	set(0, "@lsp.typemod.property.declaration.zig", { link = "@property" })
 	set(0, "@lsp.typemod.struct.declaration.zig", { link = "Type" })
 
