@@ -1,1 +1,1 @@
-require("neovim_theme").setup()
+require("neovim_theme").colorscheme()
