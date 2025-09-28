@@ -2,8 +2,6 @@ local M = {}
 
 function M.setup(opts)
 	opts = opts or {}
-
-	M.colorscheme()
 end
 
 local colors = {
