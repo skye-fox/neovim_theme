@@ -106,6 +106,7 @@ function M.colorscheme()
 	set(0, "@lsp.type.variable", {})
 	set(0, "@lsp.typemod.function.defaultLibrary", { link = "@function.builtin" })
 	set(0, "@lsp.typemod.function.builtin", { link = "@function.builtin" })
+	set(0, "@lsp.typemod.property.declaration.zig", { fg = colors.yellow })
 
 	-- Treesitter
 	set(0, "@constant.builtin", { fg = colors.purple })
