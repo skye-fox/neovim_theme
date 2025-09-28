@@ -121,5 +121,7 @@ function M.colorscheme()
 	set(0, "@variable", { fg = colors.lavender })
 	set(0, "@variable.member", { fg = colors.blue })
 	set(0, "@variable.parameter", { fg = colors.teal })
+	set(0, "@variable.builtin", { link = "@function.builtin" }) -- built-in variable names (e.g. `this`, `self`)
+	set(0, "@variable.parameter.builtin", { link = "@variable.parameter" }) -- special parameters (e.g. `_`, `it`)
 end
 return M
