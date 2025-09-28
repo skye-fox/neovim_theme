@@ -2,6 +2,10 @@ local M = {}
 
 function M.setup(opts)
 	opts = opts or {}
+
+	if opts.active then
+		M.colorscheme()
+	end
 end
 
 local colors = {
