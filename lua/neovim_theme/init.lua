@@ -108,7 +108,7 @@ function M.colorscheme()
 
 	-- Semantic Token Zig
 	set(0, "@lsp.mod.declaration.zig", { fg = colors.lavender })
-	set(0, "@lsp.type.variable.zig", { link = "@variable" })
+	set(0, "@lsp.type.variable.zig", { link = "Type" })
 	set(0, "@lsp.typemod.function.declaration.zig", { link = "Function" })
 	set(0, "@lsp.typemod.parameter.declaration.zig", { link = "@variable.parameter" })
 	set(0, "@lsp.typemod.property.declaration.zig", { link = "@property" })
