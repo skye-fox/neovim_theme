@@ -106,6 +106,7 @@ function M.colorscheme()
 	set(0, "@lsp.type.variable", {})
 	set(0, "@lsp.typemod.function.defaultLibrary", { link = "@function.builtin" })
 	set(0, "@lsp.typemod.function.builtin", { link = "@function.builtin" })
+	set(0, "@lsp.typemod.function.declaration.zig", { link = "Function" })
 	set(0, "@lsp.typemod.property.declaration.zig", { link = "@property" })
 	set(0, "@lsp.typemod.struct.declaration.zig", { link = "Type" })
 
