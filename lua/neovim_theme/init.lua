@@ -29,9 +29,11 @@ local colors = {
 	sky = "#1BE7FE",
 	light_blue = "#5DB3FD",
 	sapphire = "#74c7ec",
+	powder_blue = "#89b4fa",
 	blue = "#0096FF",
 	yellow = "#f9e2af",
-	red = "#FF0000",
+	mistake = "#FF0000",
+	ted = "#f38ba8",
 }
 
 function M.colorscheme()
@@ -57,6 +59,7 @@ function M.colorscheme()
 	set(0, "LineNR", { fg = colors.text1 })
 	set(0, "StatusLine", { bg = colors.overlay2 })
 	set(0, "Visual", { bg = colors.overlay0 })
+	set(0, "NonText", { fg = colors.text1 })
 
 	-- Syntax highlights
 	set(0, "Added", { fg = colors.spring }) -- added line in a diff
@@ -67,41 +70,41 @@ function M.colorscheme()
 	set(0, "Conditional", { fg = colors.flamingo }) -- if, then, else, endif, switch, etc.
 	set(0, "Constant", { fg = colors.flamingo }) -- any constant
 	set(0, "Debug", { fg = colors.red }) -- debugging statements
-	set(0, "Define", { fg = colors.red }) -- preprocessor #define
+	set(0, "Define", { fg = colors.mistake }) -- preprocessor #define
 	set(0, "Delimiter", { fg = colors.text0 }) -- character that needs attention
 	set(0, "Error", { fg = colors.red }) -- any erroneous construct
 	set(0, "Exception", { fg = colors.flamingo }) -- try, catch, throw
 	set(0, "Float", { link = "Number" }) -- a floating point constant: 2.3e10
 	set(0, "Function", { fg = colors.spring })
 	set(0, "Identifier", { fg = colors.lavender }) -- any variable name
-	set(0, "Ignore", { fg = colors.red }) -- left blank, hidden  |hl-Ignore|
+	set(0, "Ignore", { fg = colors.mistake }) -- left blank, hidden  |hl-Ignore|
 	set(0, "Include", { fg = colors.purple }) -- preprocessor #include
 	set(0, "Keyword", { fg = colors.flamingo }) -- any other keyword
 	set(0, "Label", { fg = colors.teal }) -- case, default, etc.
-	set(0, "Macro", { fg = colors.red }) -- same as Define
+	set(0, "Macro", { fg = colors.mistake }) -- same as Define
 	set(0, "Normal", { fg = colors.text0 })
 	set(0, "Number", { fg = colors.purple })
 	set(0, "Operator", { fg = colors.sky }) -- "sizeof", "+", "*", etc.
-	set(0, "PreCondit", { fg = colors.red }) -- preprocessor #if, #else, #endif, etc.
+	set(0, "PreCondit", { fg = colors.mistake }) -- preprocessor #if, #else, #endif, etc.
 	set(0, "PreProc", { fg = colors.sky }) -- generic Preprocessor
 	set(0, "Removed", { fg = colors.red }) -- removed line in a diff
-	set(0, "Repeat", { fg = colors.red }) -- for, do, while, etc.
+	set(0, "Repeat", { fg = colors.mistake }) -- for, do, while, etc.
 	set(0, "Special", { fg = colors.sky }) -- any special symbol
 	set(0, "SpecialChar", { link = "Special" }) -- special character in a constant
 	set(0, "SpecialComment", { link = "Special" }) -- special things inside a comment
-	set(0, "Statement", { fg = colors.red }) -- any statement
-	set(0, "StorageClass", { fg = colors.red }) -- static, register, volatile, etc.
+	set(0, "Statement", { fg = colors.mistake }) -- any statement
+	set(0, "StorageClass", { fg = colors.mistake }) -- static, register, volatile, etc.
 	set(0, "String", { fg = colors.peach })
 	set(0, "Structure", { fg = colors.yellow }) -- struct, union, enum, etc.
-	set(0, "Tag", { fg = colors.red }) -- you can use CTRL-] on this
-	set(0, "Todo", { fg = colors.red }) -- anything that needs extra attention; mostly the
+	set(0, "Tag", { fg = colors.mistake }) -- you can use CTRL-] on this
+	set(0, "Todo", { fg = colors.mistake }) -- anything that needs extra attention; mostly the
 	set(0, "Type", { fg = colors.yellow })
 	set(0, "Typedef", { link = "Type" }) -- a typedef
 	set(0, "Underlined", { fg = colors.sky }) -- text that stands out, HTML links
 
 	-- Semantic Tokens
 	set(0, "@function.builtin", { fg = colors.orange })
-	set(0, "@lsp.type.enumMember", { fg = colors.red })
+	set(0, "@lsp.type.enumMember", { fg = colors.mistake })
 	set(0, "@lsp.type.variable", {})
 	set(0, "@lsp.typemod.function.defaultLibrary", { link = "@function.builtin" })
 	set(0, "@lsp.typemod.function.builtin", { link = "@function.builtin" })
@@ -126,5 +129,45 @@ function M.colorscheme()
 
 	-- Treesitter C
 	set(0, "@type.builtin.c", { fg = colors.yellow })
+
+	-- |------------------------------------------------------------PLUGINS------------------------------------------------------------|
+
+	-- GitSigns
+	set(0, "GitSignsAdd", { fg = colors.spring })
+	set(0, "GitSignsChange", { fg = colors.yellow })
+	set(0, "GitSignsDelete", { fg = colors.ted })
+
+	-- mini.icons
+	set(0, "MiniIconsAzure", { fg = colors.light_blue })
+	set(0, "MiniIconsBlue", { fg = colors.blue })
+	set(0, "MiniIconsCyan", { fg = colors.sky })
+	set(0, "MiniIconsGreen", { fg = colors.spring })
+	set(0, "MiniIconsGrey", { fg = colors.text1 })
+	set(0, "MiniIconsOrange", { fg = colors.peach })
+	set(0, "MiniIconsPurple", { fg = colors.purple })
+	set(0, "MiniIconsRed", { fg = colors.red })
+	set(0, "MiniIconsYellow", { fg = colors.yellow })
+
+	-- SnacksDashboard
+	set(0, "SnacksDashboardKey", { fg = colors.flamingo })
+	set(0, "SnacksDashboardDir", { fg = colors.text1 })
+	set(0, "SnacksDashboardDesc", { fg = colors.lavender })
+	set(0, "SnacksDashboardFile", { fg = colors.yellow })
+	set(0, "SnacksDashboardIcon", { fg = colors.lavender })
+	set(0, "SnacksDashboardNormal", { link = "Normal" })
+	set(0, "SnacksDashboardSpecial", { fg = colors.pink })
+	set(0, "SnacksDashboardTitle", { fg = colors.lavender })
+	set(0, "SnacksDashboardFooter", { fg = colors.peach })
+	set(0, "SnacksDashboardHeader", { fg = colors.purple })
+	set(0, "SnacksDashboardTerminal", { link = "SnacksDashboardNormal" })
+
+	-- SnacksIndent
+	set(0, "SnacksIndentScope", { fg = colors.purple })
+
+	-- SnacksPicker
+	set(0, "SnacksPickerCursorLine", { link = "CursorLine" })
+	set(0, "SnacksPickerDirectory", { fg = colors.lavender })
+	set(0, "SnacksPickerListCursorLine", { link = "CursorLine" })
+	set(0, "SnacksPickerMatch", { fg = colors.lavender })
 end
 return M
