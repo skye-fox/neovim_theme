@@ -1,2 +1,2 @@
 ; Override the priority for treesitter highlights
-((field_expression) @type.zig (#set! priority 110))
+((builtin_type) @type.zig (#set! priority 110))
