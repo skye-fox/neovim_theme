@@ -10,6 +10,7 @@ function M.setup(opts)
 		plugins = {
 			gitsigns = opts.plugins and opts.plugins.gitsigns ~= false,
 			mini_icons = opts.plugins and opts.plugins.mini_icons ~= false,
+			render_markdown = opts.plugins and opts.plugins.render_markdown ~= false,
 			snacks = opts.plugins and opts.plugins.snacks ~= false,
 		},
 	}
@@ -28,6 +29,10 @@ function M.setup(opts)
 
 	if M.config.plugins.mini_icons then
 		require("neovim_theme.plugins.mini_icons").setup(pal)
+	end
+
+	if M.config.plugins.render_markdown then
+		require("neovim_theme.plugins.render_markdown").setup(pal)
 	end
 
 	if M.config.plugins.snacks then
@@ -86,6 +91,7 @@ function M.setup(opts)
 	set(0, "String", { fg = pal.peach })
 	set(0, "Structure", { fg = pal.yellow }) -- struct, union, enum, etc.
 	set(0, "Tag", { fg = pal.mistake }) -- you can use CTRL-] on this
+	set(0, "Title", { fg = pal.purple })
 	set(0, "Todo", { fg = pal.mistake }) -- anything that needs extra attention; mostly the
 	set(0, "Type", { fg = pal.yellow })
 	set(0, "Typedef", { link = "Type" }) -- a typedef
@@ -108,6 +114,14 @@ function M.setup(opts)
 	-- Treesitter
 	set(0, "@constant.builtin", { fg = pal.purple })
 	set(0, "@keyword.function", { fg = pal.flamingo })
+	set(0, "@markup.heading.1.markdown", { fg = pal.bg02, bold = true })
+	set(0, "@markup.heading.2.markdown", { fg = pal.bg02, bold = true })
+	set(0, "@markup.heading.3.markdown", { fg = pal.bg02, bold = true })
+	set(0, "@markup.heading.4.markdown", { fg = pal.bg02, bold = true })
+	set(0, "@markup.heading.5.markdown", { fg = pal.bg02, bold = true })
+	set(0, "@markup.heading.6.markdown", { fg = pal.bg02, bold = true })
+	set(0, "@markup.quote.markdown", { fg = pal.peach })
+	-- set(0, "@punctuation.special.markdown", { fg = pal.peach })
 	set(0, "@property", { fg = pal.blue })
 	set(0, "@type.zig", { fg = pal.yellow })
 	set(0, "@variable", { fg = pal.lavender })
