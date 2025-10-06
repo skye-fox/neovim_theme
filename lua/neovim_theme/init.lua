@@ -66,6 +66,7 @@ function M.setup(opts)
 	set(0, "Debug", { fg = pal.red }) -- debugging statements
 	set(0, "Define", { fg = pal.mistake }) -- preprocessor #define
 	set(0, "Delimiter", { fg = pal.text0 }) -- character that needs attention
+	set(0, "Directory", { fg = pal.lavender }) -- character that needs attention
 	set(0, "Error", { fg = pal.red }) -- any erroneous construct
 	set(0, "Exception", { fg = pal.flamingo }) -- try, catch, throw
 	set(0, "Float", { link = "Number" }) -- a floating point constant: 2.3e10
